@@ -1,0 +1,7 @@
+{
+  "name": "Ryzer",
+  "description": "A conversational AI chat application powered by the Gemini API. Talk to Ryzer and get intelligent, context-aware responses.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

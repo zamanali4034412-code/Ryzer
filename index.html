@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ryzer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <script>
+      // Set the theme before the page loads to prevent flash of wrong theme
+      const theme = localStorage.getItem('ryzer-theme') || 'dark';
+      document.documentElement.className = theme;
+    </script>
+    <style>
+      /* For custom scrollbar aesthetics */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f5f9; /* bg-slate-100 */
+      }
+      html.dark ::-webkit-scrollbar-track {
+        background: #1f2937; /* bg-gray-800 */
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #94a3b8; /* bg-slate-400 */
+        border-radius: 4px;
+      }
+       html.dark ::-webkit-scrollbar-thumb {
+        background: #4b5563; /* bg-gray-600 */
+      }
+      ::-webkit-scrollbar-thumb:hover {
+         background: #64748b; /* bg-slate-500 */
+      }
+      html.dark ::-webkit-scrollbar-thumb:hover {
+        background: #6b7280; /* bg-gray-500 */
+      }
+      /* Custom styles for rendered markdown */
+      .markdown-content ul, .markdown-content ol {
+        padding-left: 20px;
+        margin-top: 8px;
+        margin-bottom: 8px;
+      }
+      .markdown-content ul { list-style-type: disc; }
+      .markdown-content ol { list-style-type: decimal; }
+      .markdown-content p { margin-bottom: 12px; }
+      .markdown-content a {
+        color: #3b82f6; /* text-blue-500 */
+        text-decoration: underline;
+      }
+      html.dark .markdown-content a { color: #60a5fa; /* text-blue-400 */ }
+      .markdown-content pre {
+        background-color: #111827; /* bg-gray-900 */
+        padding: 12px;
+        border-radius: 8px;
+        overflow-x: auto;
+        margin-top: 8px;
+        margin-bottom: 8px;
+      }
+      .markdown-content code { font-family: monospace; }
+      .markdown-content code:not(pre > code) {
+        background-color: #e2e8f0; /* bg-slate-200 */
+        padding: 2px 4px;
+        border-radius: 4px;
+      }
+      html.dark .markdown-content code:not(pre > code) {
+        background-color: #374151; /* bg-gray-700 */
+      }
+      /* Animation for message entry */
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .message-enter {
+        animation: slideIn 0.3s ease-out forwards;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.28.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-white dark:bg-gray-900">
+    <div id="root"></div>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
